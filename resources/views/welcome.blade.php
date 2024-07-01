@@ -39,5 +39,27 @@
             <button type="button" x-on:click="makeNameUppercase"> Uppercase</button>
         </div>
          --}}
+
+    
+         {{-- <div x-data="{
+            query: '',
+            img:'',
+
+            getImnage() {
+                this.img = this.query;
+            }
+
+        }">
+            <form x-on:submit.prevent="getImnage">
+                <input type="text" x-model="query" >
+                <button type="submit">Search</button>
+            </form>
+            
+            <div x-show="img">
+                <img x-bind:src="`{{ asset('image/${query}.png') }}`">
+            </div>
+         </div> --}}
+         
     </body>
+   
 </html>
