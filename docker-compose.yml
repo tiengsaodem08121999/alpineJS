@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: alpinejs-app
+    container_name: alpinejs-app
+    volumes:
+      - .:/var/www
+      - ./storage:/var/www/storage
+      - ./vendor:/var/www/vendor
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 9000:9000
+      - 3000:3000
+    networks:
+      - alpinejs
+
+  db:
+    image: mysql:8.0.30
+    container_name: mysql-db
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 3306:3306
+    networks:
+      - alpinejs
+
+networks:
+  alpinejs:
+
+volumes:
+  mysql_data:
