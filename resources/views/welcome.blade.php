@@ -98,6 +98,18 @@
 
             <span x-text="plan"></span>
         </div> --}}
+
+        
+        {{-- lesson 9 : Text and HTML --}}
+
+            {{-- <div x-data="{hello: 'hello world'}">
+                <h1 x-text="hello"></h1>
+            </div> --}}
+
+            {{-- <div x-data="{body: '<strong>Hello</strong>'}">
+                <span x-html="body"></span>
+            </div> --}}
+        
     </body>
    
 </html>
