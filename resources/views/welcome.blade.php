@@ -59,7 +59,45 @@
                 <img x-bind:src="`{{ asset('image/${query}.png') }}`">
             </div>
          </div> --}}
-         
+
+
+         {{-- lesson 6 : more input --}}
+
+        {{-- <div x-data="{ agreed: false}">
+            <input type="checkbox" x-model="agreed"> 
+            <span x-show="agreed">
+                You have agreed</span>   
+        </div> --}}
+
+        {{-- <form 
+            x-data="{
+                users: [],
+                deleteUser () {
+                    console.log(this.users)
+                }
+            }" 
+            x-on:submit.prevent="deleteUser">
+
+            <input type="checkbox" x-model="users" value="1"> Alex
+            <input type="checkbox" x-model="users" value="2"> Billy
+            <input type="checkbox" x-model="users" value="3"> Mabel
+            <button type="submit">Delete</button>
+        </form> --}}
+
+        {{-- <div x-data="{plan: 'Monthly'}">
+            <select x-model="plan">
+                <option value="Yearly">Yearly</option>
+                <option value="Monthly">Monthly</option>
+            </select>
+            <span x-show="plan" x-text="`You've chosen the ${plan} `"></span>
+        </div> --}}
+
+        {{-- <div x-data="{plan : 'monthly'}">
+            <input type="radio" x-model="plan" value="monthly">
+            <input type="radio" x-model="plan" value="yearly">
+
+            <span x-text="plan"></span>
+        </div> --}}
     </body>
    
 </html>
