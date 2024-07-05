@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <style>
+            .bold{
+                font-weight: bold
+            }
+        </style>
 		@vite(['resources/js/app.js'])
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	</head>
@@ -109,7 +114,27 @@
             {{-- <div x-data="{body: '<strong>Hello</strong>'}">
                 <span x-html="body"></span>
             </div> --}}
+
+        {{-- lesson 7 : attributes bindding--}}
+     
+            {{-- <div x-data="{selected:false}">
+                <span x-bind:class="{'bold':selected}"> Am I bold ?</span>
+                <button x-on:click="selected = !selected">Make it bold</button>
+            </div> --}}
+            {{-- <form x-data="{name: ''}" x-on:submit.prevent="alert(`hey ${name}`)">
+                <input type="text" x-model="name">
+                <button type="submit" x-bind:disabled="name=== ''"> let's go</button>
+            </form> --}}
+            
+            {{-- <div x-data="progress:0">
+            <progress max="100">
+                <span x-text="`${progress}%`"></span>
+                </progress>
+                <button x-on:click="progress = progress + 5"> Increment</button>
+            </div> --}}
         
+        {{-- lesson 8 : attribute binding examples --}}
+            
     </body>
    
 </html>
