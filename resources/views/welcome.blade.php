@@ -26,15 +26,19 @@
 <body>
     <div x-data="{
         body: '',
-        marked: '',
+        markdown: '',
+
+        preview () {
+            this.markdown = marked.parse(this.body);
+        }
     }">
         <div>
             <div>
                 <textarea x-model="body"  cols="30" rows="4"></textarea>
             </div>
-            <button >Preview</button>
+            <button x-on:click="preview" >Preview</button>
         </div>
-        Preview
+        <div x-html="markdown"></div>
     </div>        
 
 </body>
