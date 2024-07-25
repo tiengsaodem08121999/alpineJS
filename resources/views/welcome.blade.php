@@ -190,6 +190,35 @@
             </div>
             <button x-on:click="increment"> Increment</button>
         </div> --}}
+
+
+        {{-- Learn 12: x-show vs x-if --}}
+        {{-- <div x-data="{show: false}">
+            <div x-show="show"> Am I visisble ?</div>
+            <button x-on:click="show= true"> Show me</button>
+        </div> --}}
+
+        {{-- <div 
+            x-data="{
+                show: false,
+                users: [
+                    {id:1, name:'Alex', points: 10},
+                    {id:2, name:'Billy', points:100},
+                ],
+                get userOrderByPoints () {
+                    return this.users.sort((a,b) => b.points - a.points)
+                }
+            }"
+        >
+            <button x-on:click="show = true"> Show users</button>
+            <div x-show="show">
+                <template x-for="user in  users">
+                    <div>
+                        <span x-text="user.name"></span> <span x-text="user.points"></span>
+                    </div>
+                </template>
+            </div>
+        </div> --}}
 </body>
 
 </html>
